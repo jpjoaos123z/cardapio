@@ -1,0 +1,217 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Cor do fundo da página */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #db0983; /* Rosa da logo */
+    color: #ffffff; /* Texto branco */
+    padding: 20px;
+    display: flex; /* Define um contêiner flexível */
+    align-items: center; /* Alinha verticalmente os itens */
+    justify-content: space-between; /* Cria espaço entre as partes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra abaixo do cabeçalho */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .menu-icon {
+    width: 80px; /* Tamanho da logo */
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer; /* Indica que é clicável */
+    margin-right: 15px; /* Espaçamento entre a imagem e o título */
+}
+
+header h1 {
+    flex-grow: 1; /* Faz o título ocupar todo o espaço disponível */
+    text-align: center; /* Centraliza o texto */
+    margin: 0; /* Remove margens padrão do h1 */
+    font-size: 28px; /* Tamanho do título */
+    font-weight: bold; /* Negrito para o título */
+}
+
+/* Menu de navegação */
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #ffffff; /* Link em branco */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Efeito de transição suave */
+}
+
+header nav ul li a:hover {
+    color: #ffd600; /* Cor do link ao passar o mouse */
+}
+
+/* Barra lateral fixa */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Inicialmente oculta */
+    height: 100vh;
+    width: 250px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s; /* Animação ao abrir */
+    z-index: 1000; /* Fica acima do conteúdo */
+}
+
+.sidebar.active {
+    left: 0; /* Exibe a barra lateral */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 20px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    background-color: #db0983; /* Cor de fundo do link */
+    color: #ffffff; /* Cor do texto */
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Efeito de transição suave */
+}
+
+.sidebar a:hover {
+    background-color: #b61d1d; /* Cor ao passar o mouse */
+}
+
+/* Conteúdo Principal */
+.main-content {
+    margin-left: 250px; /* Ajusta ao lado da barra lateral */
+    padding: 20px;
+}
+
+/* Seção principal */
+#menu {
+    padding: 50px 20px;
+    text-align: center; /* Centraliza o texto na seção */
+    background-color: #f5f5f5; /* Cinza-claro para o fundo */
+    margin: 20px auto; /* Centraliza verticalmente e horizontalmente */
+    border-radius: 10px; /* Borda arredondada na seção do menu */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra na seção */
+    width: 80%; /* Ajusta a largura da seção do menu */
+    max-width: 900px; /* Limita a largura máxima */
+    margin-left: 15%; /* Adiciona uma margem igual nas laterais */
+    margin-right: 20%; /* Adiciona uma margem igual nas laterais */
+}
+
+/* Conteúdo dos itens do menu */
+.menu-items {
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte, se necessário */
+    margin-bottom: 30px; /* Espaço abaixo de cada categoria */
+}
+
+.menu-item {
+    background-color: #ffffff; /* Fundo branco para itens do cardápio */
+    padding: 20px;
+    margin: 10px; /* Adiciona margem ao redor de cada item */
+    border-radius: 10px;
+    width: 220px; /* Ajusta a largura dos itens */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* Animação ao passar o mouse */
+    text-align: center; /* Centraliza o texto dentro de cada item do cardápio */
+}
+
+/* Carrinho de Compras */
+#carrinho {
+    padding: 20px;
+    background-color: #FFF0F5; /* Fundo branco no carrinho */
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra no carrinho */
+}
+
+#carrinho ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+#carrinho li {
+    background-color: #E0FFFF; /* Fundo laranja para itens do carrinho */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.remover-item {
+    background-color: #000000; /* Botão de remover em preto */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    padding: auto;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Espaço abaixo do título */
+}
+
+h3 {
+    margin: 20px 0 10px; /* Margens para o título das categorias */
+    font-size: 24px; /* Tamanho do título */
+    color: #db0983; /* Cor específica para os títulos */
+    text-align: left; /* Alinhamento à esquerda */
+    border-bottom: 2px solid #db8733; /* Linha abaixo do título */
+    padding-bottom: 5px; /* Espaço entre o título e a linha */
+}
+
+/* Rodapé */
+.footer {
+    display: flex;
+    flex-direction: column; /* Para alinhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 20px 0; /* Adiciona espaçamento superior e inferior */
+    background-color: #db0983; /* Cor de fundo do rodapé */
+    color: #ffffff; /* Texto branco no rodapé */
+}
+
+.whatsapp-icon {
+    width: 50px; /* Aumenta a largura do ícone para 50px */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 10px; /* Espaçamento acima do ícone */
+}

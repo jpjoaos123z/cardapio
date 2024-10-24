@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dono.css">
+    <title>Painel do Dono</title>
+</head>
+<body>
+    <header>
+        <h1>Painel do Dono - Jantinha da Jéssica</h1>
+    </header>
+
+    <!-- Formulário para adicionar novos itens -->
+    <div class="form-container">
+        <h2>Adicionar Novo Item</h2>
+        <form id="adicionar-item-form">
+            <div class="input-group">
+                <input type="text" id="nome" placeholder="Nome do item" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="descricao" placeholder="Descrição do item" required>
+            </div>
+            <div class="input-group">
+                <input type="number" id="preco" placeholder="Preço" required>
+            </div>
+            <div class="input-group">
+                <input type="file" id="imagem" accept="image/*" required>
+            </div>
+
+            <div class="categoria-container">
+                <h3>Categoria</h3>
+                <label>
+                    <input type="radio" name="categoria" value="comida" required> Comida
+                </label>
+                <label>
+                    <input type="radio" name="categoria" value="bebida" required> Bebida
+                </label>
+            </div>
+
+            <div class="input-group">
+                <select id="dia" required>
+                    <option value="">Selecione o dia</option>
+                    <option value="segunda-feira">Segunda-feira</option>
+                    <option value="terça-feira">Terça-feira</option>
+                    <option value="quarta-feira">Quarta-feira</option>
+                    <option value="quinta-feira">Quinta-feira</option>
+                    <option value="sexta-feira">Sexta-feira</option>
+                    <option value="sábado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                </select>
+            </div>
+
+            <button type="submit" id="adicionar-item">Adicionar Item</button>
+        </form>
+    </div>
+
+    <!-- Seções para exibir comidas e bebidas -->
+    <div class="items-container">
+        <h2>Comidas</h2>
+        <div id="comidas-items" class="items-list"></div>
+
+        <h2>Bebidas</h2>
+        <div id="bebidas-items" class="items-list"></div>
+    </div>
+
+    <script src="dono.js"></script>
+</body>
+</html>

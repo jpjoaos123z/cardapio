@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cardapio.css">
+    <title>Jantinha da Jéssica</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="jantinha.png" alt="Logo Jantinha da Jéssica" class="menu-icon" id="toggleSidebar">
+        </div>
+        <h1 class="titulo">Jantinha da Jéssica</h1>
+    </header>
+
+    <!-- Barra Lateral -->
+    <nav id="sidebar" class="sidebar">
+        <button id="closeSidebar" class="fechar-barra">✖ Sair</button>
+        <ul>
+            <li><a href="senha.html">adm</a></li>
+            <!-- Outros links podem ser adicionados aqui -->
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="main-content" class="main-content">
+        <section id="menu">
+            <h2>Cardápio do Dia - <span id="data-atual"></span></h2>
+
+            <!-- Estrutura para dias da semana -->
+            <div class="dia">
+                <h3>Segunda-feira</h3>
+                <div class="menu-items" id="comidas-segunda"></div>
+                <div class="bebidas-items" id="bebidas-segunda"></div>
+            </div>
+            <div class="dia">
+                <h3>Terça-feira</h3>
+                <div class="menu-items" id="comidas-terca"></div>
+                <div class="bebidas-items" id="bebidas-terca"></div>
+            </div>
+            <div class="dia">
+                <h3>Quarta-feira</h3>
+                <div class="menu-items" id="comidas-quarta"></div>
+                <div class="bebidas-items" id="bebidas-quarta"></div>
+            </div>
+            <div class="dia">
+                <h3>Quinta-feira</h3>
+                <div class="menu-items" id="comidas-quinta"></div>
+                <div class="bebidas-items" id="bebidas-quinta"></div>
+            </div>
+            <div class="dia">
+                <h3>Sexta-feira</h3>
+                <div class="menu-items" id="comidas-sexta"></div>
+                <div class="bebidas-items" id="bebidas-sexta"></div>
+            </div>
+            <div class="dia">
+                <h3>Sábado</h3>
+                <div class="menu-items" id="comidas-sabado"></div>
+                <div class="bebidas-items" id="bebidas-sabado"></div>
+            </div>
+            <div class="dia">
+                <h3>Domingo</h3>
+                <div class="menu-items" id="comidas-domingo"></div>
+                <div class="bebidas-items" id="bebidas-domingo"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contato" class="footer">
+        <p>&copy; 2024 Jantinha da Jéssica - Todos os direitos reservados.</p>
+        <a href="https://wa.me/5563992968988" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+        </a>
+    </footer>
+
+    <!-- Script para redirecionar ao clicar em "Finalizar Pedido" -->
+    <script src="cardapio.js"></script>
+    <script>
+        // Adiciona o dia da semana e a data atual
+        const diasDaSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+        const dataAtual = new Date();
+        const diaDaSemana = diasDaSemana[dataAtual.getDay()];
+        const dataFormatada = `${diaDaSemana}, ${dataAtual.toLocaleDateString('pt-BR')}`;
+        document.getElementById('data-atual').textContent = dataFormatada;
+    </script>
+</body>
+</html>
